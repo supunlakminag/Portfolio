@@ -1,21 +1,21 @@
-import React, { useRef, useState } from 'react';
-import { motion } from 'framer-motion';
-import emailjs from '@emailjs/browser';
-import ReCAPTCHA from 'react-google-recaptcha';
+import React, { useRef, useState } from "react";
+import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Contact = () => {
   const formRef = useRef();
   const [isSending, setIsSending] = useState(false);
   const [captchaValue, setCaptchaValue] = useState(null);
 
-  const handleCaptcha = value => {
+  const handleCaptcha = (value) => {
     setCaptchaValue(value);
   };
 
-  const sendEmail = e => {
+  const sendEmail = (e) => {
     e.preventDefault();
     if (!captchaValue) {
-      alert('Please complete the CAPTCHA verification.');
+      alert("Please complete the CAPTCHA verification.");
       return;
     }
 
@@ -29,16 +29,16 @@ const Contact = () => {
         process.env.REACT_APP_EMAILJS_PUBLIC_KEY
       )
       .then(
-        result => {
-          console.log('Email Sent:', result.text);
-          alert('Message sent successfully!');
+        (result) => {
+          console.log("Email Sent:", result.text);
+          alert("Message sent successfully!");
           setIsSending(false);
           formRef.current.reset();
           setCaptchaValue(null);
         },
-        error => {
-          console.log('Error:', error);
-          alert('Failed to send message. Try again later.');
+        (error) => {
+          console.log("Error:", error);
+          alert("Failed to send message. Try again later.");
           setIsSending(false);
         }
       );
@@ -98,14 +98,14 @@ const Contact = () => {
           ></textarea>
 
           {/* ReCAPTCHA */}
-          <ReCAPTCHA sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY} onChange={handleCaptcha} />
+          <ReCAPTCHA sitekey="6LfCuf0qAAAAAI8YwWFEsIoPANiM2fKa5VFtx7Pn" onChange={handleCaptcha} />
 
           <button
             type="submit"
             disabled={isSending}
             className="bg-gradient-to-r from-blue-800 to-indigo-500 px-8 py-4 rounded-full text-white font-semibold transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
           >
-            {isSending ? 'Sending...' : 'Send Message'}
+            {isSending ? "Sending..." : "Send Message"}
           </button>
         </form>
       </motion.div>
