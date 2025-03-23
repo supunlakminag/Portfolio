@@ -58,7 +58,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-4xl sm:text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-orange-200 to-white text-center"
+          className="text-4xl sm:text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-sky-600 to-blue-400 text-center"
         >
           Contact Me
         </motion.h1>
@@ -70,7 +70,7 @@ const Contact = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-gray-500 text-lg text-center max-w-2xl leading-relaxed"
         >
-          Have an exciting mobile or web project in mind? Please get in touch.
+          Let's build your idea!! Just drop an email. ⚡️
         </motion.p>
 
         {/* Contact Form */}
@@ -98,12 +98,12 @@ const Contact = () => {
           ></textarea>
 
           {/* ReCAPTCHA */}
-          <ReCAPTCHA sitekey="your-recaptcha-site-key" onChange={handleCaptcha} />
+          <ReCAPTCHA sitekey="6Ld8s_0qAAAAAOvRVCbblVIfQmLtIGRdMWof3mHx" onChange={handleCaptcha} />
 
           <button
             type="submit"
             disabled={isSending}
-            className="bg-gradient-to-r from-blue-600 to-indigo-500 px-8 py-4 rounded-full text-white font-semibold transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            className="bg-gradient-to-r from-blue-800 to-indigo-500 px-8 py-4 rounded-full text-white font-semibold transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
           >
             {isSending ? "Sending..." : "Send Message"}
           </button>
@@ -121,4 +121,3 @@ const Contact = () => {
 };
 
 export default Contact;
-

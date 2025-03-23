@@ -4,13 +4,13 @@ import { projectData } from '../projectData'
 
 const Projects = () => {
   return (
-    <div className='mx-auto max-w-6xl p-4 sm:p-10 text-black  flex flex-col gap-10 sm:gap-16 items-center justify-center' id='projects'>
+    <div className='mx-auto max-w-6xl p-4 sm:p-10 text-white  flex flex-col gap-10 sm:gap-16 items-center justify-center' id='projects'>
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className='text-4xl sm:text-6xl  from-white via-orange-200 to-white'
+        className='text-4xl sm:text-6xl'
       >
         My Projects
       </motion.h1>
@@ -28,17 +28,17 @@ const Projects = () => {
             key={project.id}
             target='_blank'
             rel="noopener noreferrer"
-            className="flex flex-col rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-white"
+            className="flex flex-col rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-300"
           >
             <img src={project.image} className='hover:scale-105 transition-transform duration-300' alt={project.name} />
 
-            <div className="flex flex-col gap-3 bg-white p-5 transition-colors duration-300 hover:bg-orange-100 flex-grow ">
+            <div className="flex flex-col gap-3 bg-slate-800 p-5 transition-colors duration-300 hover:bg-sky-500 flex-grow ">
               <h3 className="text-xl font-semibold"> {project.title}</h3>
-              <p className="text-sm text-slate-600">{project.description}</p>
+              <p className="text-sm text-slate-400 ">{project.description}</p>
               <div className="flex gap-3 flex-wrap mt-auto">
 
                 {project.technologies.map((tech,index)=>
-                  <span key={index} className="px-2 py-1 bg-orange-300 rounded-xl text-sm">{tech}</span>
+                  <span key={index} className="px-2 py-1 bg-sky-600 rounded-xl text-sm">{tech}</span>
                 )}
               </div>
             </div>
